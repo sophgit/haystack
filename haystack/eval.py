@@ -70,6 +70,7 @@ class EvalRetriever:
         if self.open_domain:
             for label in retriever_labels.multiple_answers:
                 for p in predictions:
+                    label=" ".join(label.split())
                     if label.lower() in p.text.lower():
                         return True
             return False
